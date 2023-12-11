@@ -18,7 +18,7 @@
       >
         <ul class="navbar-nav">
           {% if user.is_authenticated %}
-  
+
           <li class="nav-item">
             <a class="nav-link active" href="{% url 'photo:create' %}">Add a photo</a>
           </li>
@@ -26,7 +26,7 @@
             <a class="nav-link active" href="#">Hi {{user.username}}</a>
           </li>
           {% else %}
-  
+
           <li class="nav-item">
             <a href="{% url 'user:login' %}" class="btn btn-sm btn-danger"
               >Sign In</a
@@ -37,4 +37,3 @@
       </div>
     </div>
   </nav>
-  
