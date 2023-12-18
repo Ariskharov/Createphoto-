@@ -13,7 +13,7 @@
 </div>
 <div class="row pb-5">
   <div class="col-md-8">
-    <img src="{{photo.image.url}}" alt="" width="100%" />
+    <img src="{{photo.image.url}}" alt="" width="45%" oncontextmenu="return false;" /> {# Set width to 50% and disable right-click #}
   </div>
   <div class="col-md-4">
     <h4>More about this photo:</h4>
@@ -23,6 +23,13 @@
       {% endfor %}
     </ul>
     <p>{{ photo.description }}</p>
+    <p class="text-left mt-3">
+      {% if user.is_authenticated %}
+        <a href="{{photo.image.url}}" download class="btn btn-primary">Download Photo</a>
+      {% else %}
+        <span class="text-info font-weight-bold">Register to download this photo.</span>
+      {% endif %}
+    </p>
   </div>
 </div>
 
